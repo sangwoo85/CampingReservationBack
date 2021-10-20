@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+						http://www.springframework.org/schema/beans
+				        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+				        ">
+	
+		<!-- <bean id="scheduleService" class="com.mvc.example.scheduler.Imgingak" />
+		 -->
+		<!-- 스케쥴러파일이 존재하는 패키지 설정 --> 
+		<!-- <context:component-scan base-package="com.mvc.example" />  -->
+		<!-- 해당 태그들은 크론탭을 설정에 필요한 태그들 --> 
+		<!-- 
+		<task:scheduler id="jobScheduler" pool-size="10" /> 
+		<task:annotation-driven scheduler="jobScheduler" />
+ 		-->
+	<!-- Root Context: defines shared resources visible to all other web components -->
+<!-- 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+	  <property value="oracle.jdbc.driver.OracleDriver" name="driverClassName" />
+	  <property value="jdbc:oracle:thin:@localhost:1521:xe" name="url" />
+	  오라클 사용자 이름
+	  <property value="MYSTUDY" name="ksswy" />
+	  오라클 사용자 비밀번호
+	  <property value="mystudypw" name="dhormfo" />
+	</bean>
+	
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="SqlSessionFactory">
+	  <property name="dataSource" ref="dataSource" />
+	  <property value="classpath:mybatis-config.xml" name="configLocation" />
+	  <property value="classpath:/mapper/*Mapper.xml" name="mapperLocations" />
+	</bean>
+ -->	
+<!-- 	<mybatis-spring:scan base-package="com.mvc.resources.mapper" />
+ -->	
+ 	<!-- 메일 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+    <property name="host" value="smtp.gmail.com" />
+    <property name="port" value="587" />
+    <property name="username" value="ksswy79@gmail.com" />
+    <property name="password" value="dhormfo0438!!" />
+    <property name="javaMailProperties">
+    <props>
+      <prop key="mail.smtp.auth">true</prop>
+      <prop key="mail.smtp.starttls.enable">true</prop>
+    </props>
+    </property>
+  </bean>
+
+</beans>
